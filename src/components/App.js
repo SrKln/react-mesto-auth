@@ -8,7 +8,7 @@ import { api } from '../utils/api';
 import EditProfilePopup from './EditProfilePopup';
 import EditAvatarPopup from './EditAvatarPopup';
 import AddPlacePopup from './AddPlacePopup';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate, Navigate } from 'react-router-dom';
 import Login from './Login';
 import Register from './Register';
 import ProtectedRoute from './ProtectedRoute';
@@ -33,7 +33,6 @@ function App() {
   const [isRegStatPopupOpen, setIsRegStatPopupOpen] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-
   useEffect(() => {
     handleTokenCheck();
   }, [])
@@ -47,7 +46,9 @@ function App() {
           setEmail(res.data.email);
           navigate("/", { replace: true })
         }
-      });
+
+      })
+        .catch(err => console.log(err));
     }
   }
 
@@ -158,6 +159,7 @@ function App() {
         <Header email={email} onSignOut={handleSignOut} />
 
         <Routes>
+          <Route path="*" element={loggedIn ? <Navigate to="/" /> : <Navigate to="/sign-in" replace />} />
           <Route path="/" element={
             <ProtectedRoute
               element={Main}

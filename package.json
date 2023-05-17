@@ -1,7 +1,7 @@
 {
   "name": "react-mesto-auth",
   "version": "0.1.0",
-  "description": "Сдача проекта Mesto: регистрация и авторизация",
+  "description": "Mesto: портирование и работа с API",
   "homepage": "https://srkln.github.io/react-mesto-auth/",
   "private": true,
   "dependencies": {
@@ -39,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
