@@ -159,7 +159,7 @@ function App() {
         <Header email={email} onSignOut={handleSignOut} />
 
         <Routes>
-          <Route path="*" element={loggedIn ? <Navigate to="/" /> : <Navigate to="/sign-in" replace />} />
+          <Route path="*" element={loggedIn ? <Navigate to="/" /> : <Navigate to="/signin" replace />} />
           <Route path="/" element={
             <ProtectedRoute
               element={Main}
