@@ -51,7 +51,8 @@ const EditProfilePopup = memo(({ isOpen, onClose, onUpdateUser, onOverlayClose }
         required
       />
       <span className="popup__input-error profile-title-input-error" />
-      <input value={description || ''}
+      <input
+        value={description || ''}
         onChange={handleDescriptionChange}
         type="text"
         className="popup__input popup__input_profile_subtitle"

@@ -31,6 +31,7 @@ const AddPlacePopup = memo(({ isOpen, onClose, onAddPlace, onOverlayClose }) => 
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
+
     >
       <input
         onChange={handleNameChange}
@@ -41,6 +42,7 @@ const AddPlacePopup = memo(({ isOpen, onClose, onAddPlace, onOverlayClose }) => 
         placeholder="Название"
         minLength={2}
         maxLength={30}
+        value={name || ''}
         required
       />
       <span className="popup__input-error element-title-input-error" />
@@ -51,6 +53,7 @@ const AddPlacePopup = memo(({ isOpen, onClose, onAddPlace, onOverlayClose }) => 
         id="element-image-input"
         name="link"
         placeholder="Ссылка на картинку"
+        value={link || ''}
         required
       />
       <span className="popup__input-error element-image-input-error" />

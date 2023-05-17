@@ -47,6 +47,8 @@ const Login = ({
           required
           placeholder="Email"
           onChange={handleChange}
+          value={formValue.email || ''}
+
         ></input>
         <input
           className="form__input"
@@ -55,6 +57,7 @@ const Login = ({
           required
           placeholder="Пароль"
           onChange={handleChange}
+          value={formValue.password || ''}
         ></input>
         <button className="form__button">Войти</button>
       </form>

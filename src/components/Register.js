@@ -44,6 +44,7 @@ const Register = ({
           required
           placeholder="Email"
           onChange={handleChange}
+          value={formValue.email || ''}
         ></input>
         <input
           className="form__input"
@@ -52,6 +53,7 @@ const Register = ({
           required
           placeholder="Пароль"
           onChange={handleChange}
+          value={formValue.password || ''}
         ></input>
         <button className="form__button">Зарегистрироваться</button>
       </form>
